@@ -1,12 +1,25 @@
 import time, subprocess
 
-workout_time = 20
-rest_time = 10
-exercise_circuit = 40
 
-while workout_time > 0:
-    print(workout_time, end="\n")
-    time.sleep(1)
-    workout_time -= 1
+class Tabata:
+    """A simple attempt to create add free tabata timer."""
 
-subprocess.Popen(["start", "Boat-horn-sound-effect.MP3"], shell=True)
+    def __init__(self):
+        self.training_time = int
+        self.rest_time = int
+
+    def workout_time(self):
+        self.training_time = 20
+        subprocess.Popen(["start", "gun_shot.MP3"], shell=True)
+        while self.training_time > 0:
+            print(self.training_time, end="\n")
+            time.sleep(1)
+            self.training_time -= 1
+        subprocess.Popen(["start", "Boat-horn-sound-effect.MP3"], shell=True)
+
+    def cooling_time(self):
+        self.rest_time = 10
+        while self.rest_time > 0:
+            print(self.rest_time, end="\n")
+            time.sleep(1)
+            self.rest_time -= 1
